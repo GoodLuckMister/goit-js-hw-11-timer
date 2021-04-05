@@ -24,7 +24,7 @@ class CountdownTimer {
     clearInterval(intervalRef);
   }
 }
-const startTime = new Date('March 17, 2021');
+const startTime = new Date('December 17, 2021');
 const timer = new CountdownTimer('#timer1', startTime);
 
 timer.start(updateClockFace);
