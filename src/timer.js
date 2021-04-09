@@ -6,24 +6,24 @@ class Timer {
 
   getSeconds() {
     const sec = Math.floor((this.countdown % (1000 * 60)) / 1000);
-    return transformValues(sec);
+    return this.transformValues(sec);
   }
 
   getMinutes() {
     const min = Math.floor((this.countdown % (1000 * 60 * 60)) / (1000 * 60));
-    return transformValues(min);
+    return this.transformValues(min);
   }
 
   getHours() {
     const hours = Math.floor(
       (this.countdown % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
     );
-    return transformValues(hours);
+    return this.transformValues(hours);
   }
 
   getDays() {
     const days = Math.floor(this.countdown / (1000 * 60 * 60 * 24));
-    return transformValues(days);
+    return this.transformValues(days);
   }
 
   render() {
@@ -47,10 +47,9 @@ class Timer {
       this.render();
     }, 1000);
   }
-}
-
-function transformValues(value) {
-  return String(value).padStart(2, '0');
+  transformValues(value) {
+    return String(value).padStart(2, '0');
+  }
 }
 
 export default Timer;
